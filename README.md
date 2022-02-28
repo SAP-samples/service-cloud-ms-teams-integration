@@ -20,8 +20,8 @@ The ticket collaboration messaging extension integrates Microsoft Teams with SAP
 
 ## Requirements
 
-- SAP Service Cloud C4C demo tenant.
-- SAP integration suite on SAP BTP S ubaccount.
+- SAP Service Cloud C4C tenant.
+- SAP integration suite on SAP BTP Subaccount.
 - Application Server on SAP BTP subaccount, which support Teams messaging extension.
 - Azure subscription.
 - Microsoft 365 developer account.
@@ -33,7 +33,7 @@ The ticket collaboration messaging extension integrates Microsoft Teams with SAP
 
 - Step 2: [Create Bot resource on Azure and setup SSO.](./documentation/step2/botsso.md)
 
-- Step 2-1: [Create a Cloud for Customer(C4C) demo tenant.](./documentation/step2-1/c4ctenant.md)
+- Step 2-1: [Create a sample ticket on your Cloud for Customer(C4C) tenant.](./documentation/step2-1/c4ctenant.md)
 
 - Step 2-2: [Set up an SAP Cloud Integration Suite trial account.](./documentation/step2-2/cloud-integration-suite.md)
 
