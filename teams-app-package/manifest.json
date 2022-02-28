@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.8/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.8",
+  "version": "3.0.3",
+  "id": "340dc6a7-e96c-4cef-9b8d-e6730455567b",
+  "packageName": "com.sap.teams.chat.export",
+  "developer": {
+    "name": "SAP",
+    "websiteUrl": "https://www.sap.com",
+    "privacyUrl": "https://www.sap.com",
+    "termsOfUseUrl": "https://www.sap.com"
+  },
+  "icons": {
+    "color": "icon-color.png",
+    "outline": "icon-outline.png"
+  },
+  "name": {
+    "short": "Export Chat",
+    "full": "Export messages in the current chat"
+  },
+  "description": {
+    "short": "Export messages in the current chat, post ticket details to the current chat",
+    "full": "Export messages in the current chat, post ticket details to the current chat"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "340dc6a7-e96c-4cef-9b8d-e6730455567b",
+      "scopes": ["team", "personal", "groupchat"],
+      "isNotificationOnly": false,
+      "supportsFiles": true
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "340dc6a7-e96c-4cef-9b8d-e6730455567b",
+      "canUpdateConfiguration": false,
+      "commands": [
+        {
+          "id": "ShowTicketDetails",
+          "type": "action",
+          "title": "Show Ticket",
+          "description": "Show ticket details",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": ["commandBox", "compose", "message"],
+          "parameters": [
+            {
+              "name": "param",
+              "title": "param",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ExportChat",
+          "type": "action",
+          "title": "Export Chat",
+          "description": "Export this chat",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": ["commandBox", "compose", "message"],
+          "parameters": [
+            {
+              "name": "param",
+              "title": "param",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "SignOutCommand",
+          "type": "action",
+          "title": "Sign Out",
+          "description": "Sign out from authenticated services.",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": ["commandBox", "compose"],
+          "parameters": [
+            {
+              "name": "param",
+              "title": "param",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "messageHandlers": [
+        {
+          "type": "link",
+          "value": {
+            "domains": ["*.botframework.com"]
+          }
+        }
+      ]
+    }
+  ],
+  "permissions": ["identity"],
+  "validDomains": [
+    "*.githubusercontent.com",
+    "*.ngrok.io",
+    "*.botframework.com"
+  ]
+}

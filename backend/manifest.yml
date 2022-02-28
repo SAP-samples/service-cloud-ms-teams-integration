@@ -1,0 +1,7 @@
+---
+applications:
+- name: ms-teams-backend
+  memory: 256M
+  disk_quota: 256M
+  buildpack: nodejs_buildpack
+  command: npm start
