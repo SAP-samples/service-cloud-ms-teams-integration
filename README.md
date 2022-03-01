@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/service-cloud-ms-teams-integration)](https://api.reuse.software/info/github.com/SAP-samples/service-cloud-ms-teams-integration)
+
 # **Integrate Microsoft Teams with SAP Service Cloud using SAP Integration Suite**
 
 ## Description
