@@ -4,9 +4,9 @@
 
 ## Description
 
-Integrate Microsoft Teams with SAP Service Cloud through SAP Integration Suite! It import the customer’s ticket information within the chat and exports the chat messages directly to the ticket within the chat. It simplifies SAP Service Cloud calls using SAP Integration Suite.
+Integrate Microsoft Teams with SAP Service Cloud through SAP Integration Suite!
 
-Ticket Collaboration messaging extension improves the productivity in ticket processing by seamlessly integrating SAP Service Cloud and Microsoft Teams. This messaging extension allows service agents to start a conversation with their peers, right from the Service Cloud ticket screen or directly from MS Teams. The agents can add a brief description of the ticket as an adaptive card into the conversation to help their peers to understand the issue. After the discussion, the agents can export the conversation as a reference back to the ticket screen by using the Ticket Collaboration messaging extension.
+Ticket Collaboration messaging extension improves the productivity in ticket processing by seamlessly integrating SAP Service Cloud and Microsoft Teams. This messaging extension allows service agents to start a conversation with their peers, right from the Service Cloud ticket screen or directly from MS Teams. The agents can add a brief description of the ticket as an adaptive card into the conversation to help their peers to understand the issue. After the discussion, the agents can export the conversation as a reference back to the ticket screen by using the Ticket Collaboration messaging extension. The extension simplifies SAP Service Cloud calls using SAP Integration Suite.
 
 ## Architecture
 
