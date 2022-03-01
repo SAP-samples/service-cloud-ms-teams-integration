@@ -44,7 +44,7 @@ Get the Ticket Collaboration Node.js application from [GitHub](https://github.to
     - 2.3. Update `connectionName` with the name of the OAuth Connection settings noted during [identity provider registration](../step2/botsso.md##register-azure-active-directory-identity-provider-with-the-bot) (step 4).
 
     ```
-    #MS BOT app credentials
+    # MS BOT app credentials
     MicrosoftAppId=<your-app-id>
     MicrosoftAppPassword=<your-app-secret>
     connectionName=<your-connection-name>
