@@ -27,7 +27,7 @@ Following steps are involved in setting up Teams Messaging Extension application
 
 ## Get Ticket Collaboration messaging extension
 
-Get the Ticket Collaboration Node.js application from [GitHub](https://github.tools.sap/btp-use-case-factory/teams-c4c-ticket-collaboration).
+Get the Ticket Collaboration Node.js application from [GitHub](https://github.com/SAP-samples/service-cloud-ms-teams-integration).
 
 - You can clone the repository into your computer or download the repository as a zip file.
 
