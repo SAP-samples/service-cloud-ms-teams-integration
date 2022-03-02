@@ -14,11 +14,11 @@ Ticket Collaboration messaging extension improves the productivity in ticket pro
 
 ## Challenges
 
-Many issues handled by the members of SAP Service Cloud are complex and likely to require more than one session for the complete resolution. Agents often chat with their peers about complex issues, and multiple agents may also be involved in the process. It is challenging to keep track of the progress over various sessions and different agents, which may lead to delays in ticket resolution.
+Many issues handled by the members of SAP Service Cloud are complex and likely to require more than one session to be resolved. Agents often chat with their peers and multiple agents may also involved in the resolution of complex issues. It is challenging to keep track of the progress over various sessions and different agents, which may lead to delays in ticket resolution.
 
 ## Solution
 
-The ticket collaboration messaging extension integrates Microsoft Teams with SAP Service Cloud using SAP integration suite and Business Technology Platform. Ticket collaboration extension augments the agents' conversation experience by enabling them to post ticket details into a chat. The extension also provides a convenient way to keep a reference to the current progress by allowing agents to export and attach a conversation into a service ticket.
+The Ticket Collaboration messaging extension integrates Microsoft Teams with SAP Service Cloud using SAP integration suite and Business Technology Platform. Ticket collaboration extension augments the agents' conversation experience by enabling them to post ticket details into a chat. The extension also provides a convenient way to keep a reference to the current progress by allowing agents to export and attach a conversation into a service ticket.
 
 ## Requirements
 
