@@ -111,20 +111,10 @@ class TeamsChatExportBot extends TeamsActivityHandler {
         context._activity.conversation.id
       );
 
-      // Getting start date of chat to set min-date
-      const startDate = new Date(
-        new Date(chat.createdDateTime).getTime() + timeOffset
-      );
-      const start = moment(startDate).format("YYYY-MM-D");
-
-      // Getting (end date + 1day) of chat to set max-date
-      const endDate = new Date(
-        new Date().getTime() + timeOffset + 60 * 60 * 1000 * 24
-      ); // + 60 * 60 * 1000 * 24 chat.lastUpdatedDateTime
-
-      // const end = moment(endDate).subtract(1, "days").format("YYYY-MM-D");
-      const end = moment(endDate).format("YYYY-MM-D");
-      return adaptivecard.chatExportCard(start, end);
+      const startLocalDate = moment.utc(chat.createdDateTime).local().subtract(1, 'days').format("YYYY-MM-D");
+      const endLocalDate = moment().format("YYYY-MM-D");
+      console.log("startLocalDate", startLocalDate, "endLocalDate", endLocalDate);
+      return adaptivecard.chatExportCard(startLocalDate, endLocalDate);
     }
 
     if (action.commandId === "ShowTicketDetails") {
@@ -193,10 +183,6 @@ class TeamsChatExportBot extends TeamsActivityHandler {
         messages.value.forEach((message) => {
           message["isSelected"] = true;
         });
-
-        const chat = await client.getChatDetails(
-          context._activity.conversation.id
-        );
 
         // Validating dates (if any) and constructing success messages
         let status = "";
@@ -361,40 +347,18 @@ class TeamsChatExportBot extends TeamsActivityHandler {
 
     return new Promise(function (resolve, reject) {
       if (filter.key === "Date.Export") {
-        let offsetStartTime = new Date(
-          new Date(filter.startDate + ":" + filter.startTime).getTime() +
-            timeOffset
-        );
-        if (offsetStartTime.isDstObserved() && !actualDay.isDstObserved()) {
-          offsetStartTime = new Date(
-            offsetStartTime.getTime() + 60 * 60 * 1000
-          );
-        }
-        let offsetEndTime = new Date(
-          new Date(filter.endDate + ":" + filter.endTime).getTime() + timeOffset
-        );
-
-        if (offsetEndTime.isDstObserved() && !actualDay.isDstObserved()) {
-          offsetEndTime = new Date(offsetEndTime.getTime() + 60 * 60 * 1000);
-        }
+        const startLocalMoment = moment(filter.startDate + " " + filter.startTime, "YYYY-MM-DD HH:mm");
+        const endLocalMoment = moment(filter.endDate + " " + filter.endTime, "YYYY-MM-DD HH:mm");
 
         messages.map((element) => {
-          let offsetMessageTime = new Date(
-            new Date(element.lastModifiedDateTime).getTime() + timeOffset
-          );
-
-          if (offsetMessageTime.isDstObserved() && !actualDay.isDstObserved()) {
-            offsetMessageTime = new Date(
-              offsetMessageTime.getTime() + 60 * 60 * 1000
-            );
-          }
+          const messageLocalMoment = moment.utc(element.lastModifiedDateTime).local();
 
           if (
             element.messageType == "message" &&
             !element.body.content.includes("</attachment>") &&
             element.body.content !== "" &&
-            offsetMessageTime >= offsetStartTime &&
-            offsetMessageTime <= offsetEndTime
+            messageLocalMoment.isAfter(startLocalMoment) &&
+            messageLocalMoment.isBefore(endLocalMoment)
           ) {
             let ele = { ...element };
             ele.body.content = ele.body.content.replace(/(<([^>]+)>)/gi, "");
