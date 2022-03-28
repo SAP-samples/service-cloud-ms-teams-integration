@@ -31,9 +31,9 @@ Download and install [ngrok](https://ngrok.com/download) tunneling solution base
 
 ## Azure Subscription with Bot Services and Active Directory privileges
 
-**Important:** Bot Services and Active Directory(AD) privileges are required to proceed the following steps. These privileges could be limited to your organization or your account. You may use [Azure Free Trial](https://azure.microsoft.com/en-us/free/) clicking "Start free" button but it may also limit the privileges or the OAuth2 connection from your personal AD to your organization's AD. Ask the person in charge of the Azure subscription and privileges in your organization.
+**Important:** Bot Services and Active Directory(AD) privileges are required to complete the following steps. These privileges could be limited to your organization or your account. You may use [Azure Free Trial](https://azure.microsoft.com/en-us/free/), which may also limit the privileges or the OAuth2 connection from your personal AD to your organization's AD. For more details, contact the Azure administrator of your organization.
 
-- After successful setup, you can see the Azure portal landing page as follows.
+- After the successful Azure setup, you can see the Azure portal landing page as follows.
   ![Azure Portal landing page](./images/azure-landing-page.png)
 
 You can verify the access to Azure Bot Services and app registrations in Azure Active Directory.
