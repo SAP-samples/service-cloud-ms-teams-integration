@@ -34,7 +34,7 @@ Following steps are involved in the creation of a Bot resource on Azure, and set
    ![Add Channel](./images/add-teams-channel.png)
    ![Channel Added](./images/teams-channel-added.png)
 
-- Note: Creation of Multi Tenant Azure Bot resource also creates an app registrration in Azure AD. You can view it in the Azure AD app registrations.
+- Note: Creation of Multi Tenant Azure Bot resource also creates an app registration in Azure AD. You can view it in the Azure AD app registrations.
   ![Bot Created](./images/bot-app-ad.png)
 
 &nbsp;
@@ -47,7 +47,7 @@ Following steps are involved in the creation of a Bot resource on Azure, and set
 2. Give an appropriate name for the app, and set "Redirect URI" to `https://token.botframework.com/.auth/web/redirect`. Click on "Register".
    ![App Registration Form](./images/app-registration-form.png)
 
-3. Note down "Application ID" and "Tenant ID", found in the "Overview" section of the app. These values are reuiqred to setup OAuth Connection in Bot.
+3. Note down "Application ID" and "Tenant ID", found in the "Overview" section of the app. These values are required to setup OAuth Connection in Bot.
    ![App Overview](./images/app-overview.png)
 
 4. Create a "Client Secret" by clicking on "New client secret" in the "Certificates & secrets" section of the app. Set the validity to maximum available value and click on "Save". Note down the "Value" of newly created client secret.
@@ -84,7 +84,7 @@ Following steps are involved in the creation of a Bot resource on Azure, and set
 
    - Ex: Home > Resource Groups > Teams > ExportChatBot
 
-2. Add a new OAuth connection settings by clicking on "Add OAuth Connectoin Settings" button under "Configuration" section.
+2. Add a new OAuth connection settings by clicking on "Add OAuth Connection Settings" button under "Configuration" section.
 
    - 2.1. Give an appropriate name to the connection.
    - 2.2. Set Service Provider to `Azure Active Directory v2`.

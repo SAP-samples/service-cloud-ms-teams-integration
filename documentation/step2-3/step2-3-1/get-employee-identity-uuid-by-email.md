@@ -25,7 +25,7 @@
     ![Content Modifier](./images/23-content-modifier.png)
     ![Content Modifier](./images/24-content-modifier.png)
     ![Content Modifier](./images/25-content-modifier.png)
-* Add "Request Reply" bwtween "Content Modifier" and "End"
+* Add "Request Reply" between "Content Modifier" and "End"
 * Connect "HTTP" from "Request Reply" to "Receiver"
   * "Connection" tab
     * Address: ```https://<TENANT_ID>.crm.ondemand.com/sap/c4c/odata/uid/v1/c4codataapi/EmployeeCollection```

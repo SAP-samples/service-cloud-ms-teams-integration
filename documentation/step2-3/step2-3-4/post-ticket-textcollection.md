@@ -41,7 +41,7 @@
   ![Content Modifier](./images/13-content-modifier.png)
   ![Content Modifier](./images/14-1-content-modifier.png)
   ![Content Modifier](./images/14-2-content-modifier.png)
-* Add "Request Reply" bwtween "Content Modifier" and "End"
+* Add "Request Reply" between "Content Modifier" and "End"
 * Connect "HTTP" from "Request Reply" to "Receiver"
   * "Connection" tab
     * Address: ```https://<TENANT_ID>.crm.ondemand.com/sap/c4c/odata/v1/ticket/ServiceRequestCollection('${header.ParentObjectID}')/ServiceRequestTextCollection```

@@ -22,6 +22,7 @@ Following steps are involved in the registration of Ticket Collaboration messagi
 
    - You can create your own app manifest from [Microsoft Developer Portal](https://dev.teams.microsoft.com/home).
    - The compressed file must contain only `manifest.json`, `icon-color.png`, `icon-outline.png`.
+    - For Windows users, install [Zip for Windows](http://gnuwin32.sourceforge.net/packages/zip.htm) and run the script of `compress-app.sh` on [git](https://git-scm.com/) bash.
 
 &nbsp;
 

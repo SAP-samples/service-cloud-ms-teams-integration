@@ -29,9 +29,9 @@ Download and install [ngrok](https://ngrok.com/download) tunneling solution base
 
 &nbsp;
 
-## Signup for an Azure free trial subscription
+## Azure Subscription with Bot Services and Active Directory privileges
 
-Setup an Azure free trial subscription by clicking on "Start freee" button and providig required details [here.](https://azure.microsoft.com/en-us/free/)
+**Important:** Bot Services and Active Directory(AD) privileges are required to proceed the following steps. These privileges could be limited to your organization or your account. You may use [Azure Free Trial](https://azure.microsoft.com/en-us/free/) clicking "Start free" button but it may also limit the privileges or the OAuth2 connection from your personal AD to your organization's AD. Ask the person in charge of the Azure subscription and privileges in your organization.
 
 - After successful setup, you can see the Azure portal landing page as follows.
   ![Azure Portal landing page](./images/azure-landing-page.png)
@@ -67,6 +67,7 @@ Create a free Microsoft M365 developer trial account following instructions in t
 4. Create an admin username and password. Click on "Continue" button and enter a phone number for security in the next step.
 
    ![Create admin user](./images/create-admin-user.png)
+   ![Add phone number](./images/add-phone-number.png)
 
 5. Once all the steps are completed, you can see the E5 subscription dashboard as follows. You can view the subscription by clicking on "Go to subscription".
 

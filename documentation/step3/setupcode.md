@@ -50,6 +50,15 @@ Get the Ticket Collaboration Node.js application from [GitHub](https://github.co
     connectionName=<your-connection-name>
     ```
 
+    - 2.4. Set your Cloud for Customer(C4C) tenant information like below.
+
+    ```
+    # SAP Service Cloud (Cloud for Customers, C4C)
+    c4cApiId=<SAP_SERVICE_CLOUD_C4C_API_ID>
+    c4cApiPassword=<SAP_SERVICE_CLOUD_C4C_API_PASSWORD>
+    c4cTenantUrl=<SAP_SERVICE_CLOUD_C4C_TENANT_URL>
+    ```
+
 &nbsp;
 
 ## Run Node.js bot application
@@ -64,7 +73,13 @@ Get the Ticket Collaboration Node.js application from [GitHub](https://github.co
 
 ## Establish a secure HTTP tunnel using Ngrok
 
-1. Establish a secure HTTP tunnel for the locally running bot application using `ngrok http -host-header=rewrite 8080` in a new VS Code terminal.
+1. Create an ngrok account and add its auth token to your local environment. The token can be found in the ngrok dashboard.
+
+   ```
+   ngrok authtoken <token>
+   ```
+
+2. Establish a secure HTTP tunnel for the locally running bot application using `ngrok http -host-header=rewrite 8080` in a new VS Code terminal.
 
    ```
    #Ngrok command
@@ -74,9 +89,9 @@ Get the Ticket Collaboration Node.js application from [GitHub](https://github.co
 
    **Important:** Tunnel should be established at the same port where the Node.js bot application is listening to.
 
-2. Copy HTTPS endpoint created for the application.
+3. Copy HTTPS endpoint created for the application.
    ![Ngrok Tunnel](./images/ngrok-tunnel.png)
-   **Important:** Messaging endpoing should be updated each time when you restart Ngrok. This is due to the change in domain name when you restart Ngrok tunneling (free version).
+   **Important:** Messaging endpoint should be updated each time when you restart Ngrok. This is due to the change in domain name when you restart Ngrok tunneling (free version).
 
 &nbsp;
 

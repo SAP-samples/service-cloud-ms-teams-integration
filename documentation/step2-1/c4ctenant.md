@@ -1,20 +1,5 @@
 # **Create a sample ticket on your Cloud for Customer(C4C) tenant**
 
-- [Set your Cloud for Customer(C4C) tenant information](#set-your-cloud-for-customerc4c-tenant-information).
-- [Create a sample ticket in your C4C tenant](#create-a-sample-ticket-in-your-c4c-tenant).
-
-## Set your Cloud for Customer(C4C) tenant information
-
-- Replace the "/backend/.env" file like below.
-```
-# SAP Service Cloud (Cloud for Customers, C4C)
-c4cApiId=<SAP_SERVICE_CLOUD_C4C_API_ID>
-c4cApiPassword=<SAP_SERVICE_CLOUD_C4C_API_PASSWORD>
-c4cTenantUrl=<SAP_SERVICE_CLOUD_C4C_TENANT_URL>
-```
-
-## Create a sample ticket in your C4C tenant
-
 1. Once your request is approved and a demo tenant is assigned to you, login to the SAP Service Cloud C4C tenant using the link and the credentials provided in the email.
    ![C4C Login](./images/c4c-login.png)
 
