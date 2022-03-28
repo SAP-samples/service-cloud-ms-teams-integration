@@ -4,8 +4,8 @@ Following dependencies are required for developing Chat Export Messaging Extensi
 
 - [Node.js and Npm](#install-nodejs-and-npm).
 - [Ngrok](#install-ngrok-tunneling) (recommended) or equivalent tunneling solution.
-- [Azure Subscription with Bot Services and Active Directory privileges](#signup-for-an-azure-free-trial-subscription).
 - [Microsoft 365 Developer Account with custom app uploading policy](#create-a-microsoft-365-developer-account).
+- [Azure Subscription with Bot Services and Active Directory privileges](#signup-for-an-azure-free-trial-subscription).
 - [A code editor](#install-a-code-editor).
 
 \*\* If you already have all of these dependencies covered, please feel free to skip this section.
@@ -26,27 +26,6 @@ Download and install [Node.js](https://nodejs.org/en/download/) based on your op
 Download and install [ngrok](https://ngrok.com/download) tunneling solution based on your operating system.
 
 - You can check ngrok installation using `ngrok` command in your terminal.
-
-&nbsp;
-
-## Azure Subscription with Bot Services and Active Directory privileges
-
-**Important:** Bot Services and Active Directory(AD) privileges are required to complete the following steps. These privileges could be limited to your organization or your account. You may use [Azure Free Trial](https://azure.microsoft.com/en-us/free/), which may also limit the privileges or the OAuth2 connection from your personal AD to your organization's AD. For more details, contact the Azure administrator of your organization.
-
-- After the successful Azure setup, you can see the Azure portal landing page as follows.
-  ![Azure Portal landing page](./images/azure-landing-page.png)
-
-You can verify the access to Azure Bot Services and app registrations in Azure Active Directory.
-
-- Azure Bot Services.
-  ![Azure Bot Services](./images/azure-bot-services.png)
-
-- Azure Active Directory.
-  ![Azure Active Directory](./images/azure-active-directory.png)
-
-&nbsp;
-
-Note: If you are using an existing Azure subscrition, please verify if you have access to Bot Services and Azure Active Directory.
 
 &nbsp;
 
@@ -82,6 +61,30 @@ Create a free Microsoft M365 developer trial account following instructions in t
 7. In the Teams Admin Center, you can verify that the custom app uploading is allowed.
 
    ![Teams App Policy](./images/teams-app-policy.png)
+
+&nbsp;
+
+
+## Azure Subscription with Bot Services and Active Directory privileges
+
+**Important:** Bot Services and Active Directory(AD) privileges are required to complete the following steps. These privileges could be limited to your organization or your account. You may use [Azure Free Trial](https://azure.microsoft.com/en-us/free/), which may also limit the privileges or the OAuth2 connection from your personal AD to your organization's AD. For more details, contact the Azure administrator of your organization.
+
+- To obtain required privileges, you can sign up to the azure free trial using the Microsoft 365 developer account created in the previous step.
+
+- After the successful Azure setup, you can see the Azure portal landing page as follows.
+  ![Azure Portal landing page](./images/azure-landing-page.png)
+
+You can verify the access to Azure Bot Services and app registrations in Azure Active Directory.
+
+- Azure Bot Services.
+  ![Azure Bot Services](./images/azure-bot-services.png)
+
+- Azure Active Directory.
+  ![Azure Active Directory](./images/azure-active-directory.png)
+
+&nbsp;
+
+Note: If you are using an existing Azure subscrition, please verify if you have access to Bot Services and Azure Active Directory with app registration privileges.
 
 &nbsp;
 
