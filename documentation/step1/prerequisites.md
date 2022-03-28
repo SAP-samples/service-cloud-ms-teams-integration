@@ -5,7 +5,7 @@ Following dependencies are required for developing Chat Export Messaging Extensi
 - [Node.js and Npm](#install-nodejs-and-npm).
 - [Ngrok](#install-ngrok-tunneling) (recommended) or equivalent tunneling solution.
 - [Microsoft 365 Developer Account with custom app uploading policy](#create-a-microsoft-365-developer-account).
-- [Azure Subscription with Bot Services and Active Directory privileges](#signup-for-an-azure-free-trial-subscription).
+- [Azure Subscription with Bot Services and Active Directory privileges](#azure-subscription-with-bot-services-and-active-directory-privileges).
 - [A code editor](#install-a-code-editor).
 
 \*\* If you already have all of these dependencies covered, please feel free to skip this section.
