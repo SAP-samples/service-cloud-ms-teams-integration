@@ -423,6 +423,40 @@ class AdaptiveCardsHelper {
       },
     };
   }
+
+  showErrorCard(errorMessage) {
+    const card = CardFactory.adaptiveCard({
+      version: "1.0.0",
+      type: "AdaptiveCard",
+      body: [
+        {
+          type: "TextBlock",
+          text: errorMessage,
+        },
+      ],
+      actions: [
+        {
+          type: "Action.Submit",
+          title: "Close",
+          data: {
+            key: "Close",
+          },
+        },
+      ],
+    });
+
+    return {
+      task: {
+        type: "continue",
+        value: {
+          card: card,
+          heigth: 600,
+          width: 800,
+          title: "Error",
+        },
+      },
+    };
+  }
 }
 
 module.exports = new AdaptiveCardsHelper();

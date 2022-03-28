@@ -49,7 +49,8 @@ class TeamsChatExportBot extends TeamsActivityHandler {
           resolve(tickets);
         })
         .catch((error) => {
-          throw new Error(error);
+          console.log('getTickets catch', error);
+          reject(error);
         });
     });
   }
@@ -63,7 +64,7 @@ class TeamsChatExportBot extends TeamsActivityHandler {
         context.activity.from.id
       );
     } catch (error) {
-      console.log("Bot is not a part of the current conversation!");
+      console.log("Bot is not a part of the current conversation!", error);
       // console.log(JSON.stringify(error));
       if (
         error.code === "ServiceError" ||
@@ -130,16 +131,20 @@ class TeamsChatExportBot extends TeamsActivityHandler {
       // Get user details to fetch tickets
       const client = new GraphClient(tokenResponse.token);
       const agent = await client.GetMyProfile();
-      const tickets = await this.getTickets(agent);
-      this.storage["tickets"] = tickets;
-      let ticketChoices = [];
-      tickets.forEach((ticket) => {
-        ticketChoices.push({
-          title: ticket.Name,
-          value: ticket.ID,
+      try {
+        const tickets = await this.getTickets(agent);
+        this.storage["tickets"] = tickets;
+        let ticketChoices = [];
+        tickets.forEach((ticket) => {
+          ticketChoices.push({
+            title: ticket.Name,
+            value: ticket.ID,
+          });
         });
-      });
-      return adaptivecard.showTicketCard(ticketChoices);
+        return adaptivecard.showTicketCard(ticketChoices);
+      } catch (error) {
+        return adaptivecard.showErrorCard(error);
+      }
     }
 
     if (action.commandId === "SignOutCommand") {
@@ -301,19 +306,22 @@ class TeamsChatExportBot extends TeamsActivityHandler {
 
     if (action.commandId === "ShowTicketDetails") {
       const data = await action.data;
-      if (this.storage.tickets === "undefined") {
-        throw new Error("Tickets not fetched!");
-      }
-      let ticket = {};
-      this.storage.tickets.forEach((t) => {
-        if (t.ID === data.ticket) {
-          ticket = t;
-        }
-      });
+      if (data && data.ticket) {
+        if (this.storage.tickets === "undefined" || !this.storage.tickets.length) {
+          await context.sendActivity("Tickets not fetched!");
+        } else {
+          let ticket = {};
+          this.storage.tickets.forEach((t) => {
+            if (t.ID === data.ticket) {
+              ticket = t;
+            }
+          });
 
-      const adaptive = await adaptivecard.getTicketDetailCard(ticket);
-      const activity = MessageFactory.attachment(adaptive);
-      await context.sendActivity(activity);
+          const adaptive = await adaptivecard.getTicketDetailCard(ticket);
+          const activity = MessageFactory.attachment(adaptive);
+          await context.sendActivity(activity);
+        }
+      }
     }
 
     return {};

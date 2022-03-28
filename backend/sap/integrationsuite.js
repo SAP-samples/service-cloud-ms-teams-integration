@@ -87,10 +87,14 @@ class IntegrationSuite {
           this.getHttpConfig()
         )
         .then((response) => {
-          resolve(response.data.d.results[0].IdentityUUID);
+          if (response.data.d && response.data.d.results && response.data.d.results.length > 0 && response.data.d.results[0].IdentityUUID) {
+            resolve(response.data.d.results[0].IdentityUUID);
+          } else {
+            reject('Cannot find your email "' + email + '" among C4C employees');
+          }
         })
         .catch((error) => {
-          console.log(error);
+          console.log('getEmployeeIdentityUuidByEmail catch', error);
           reject(error);
         });
     });
@@ -109,10 +113,14 @@ class IntegrationSuite {
           this.getHttpConfig()
         )
         .then((response) => {
-          resolve(this.convertToSimpleTickets(response.data.d.results));
+          if (response.data.d.results && response.data.d.results.length > 0) {
+            resolve(this.convertToSimpleTickets(response.data.d.results));
+          } else {
+            reject("You have no ticket.");
+          }
         })
         .catch((error) => {
-          console.log(error);
+          console.log('getTicketsByCreationIdentityUuid catch', error);
           reject(error);
         });
     });
