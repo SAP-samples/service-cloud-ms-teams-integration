@@ -111,8 +111,8 @@ class TeamsChatExportBot extends TeamsActivityHandler {
         context._activity.conversation.id
       );
 
-      const startLocalDate = moment.utc(chat.createdDateTime).local().subtract(1, 'days').format("YYYY-MM-D");
-      const endLocalDate = moment().format("YYYY-MM-D");
+      const startLocalDate = moment.utc(chat.createdDateTime).local().subtract(1, 'days').format("YYYY-MM-DD");
+      const endLocalDate = moment().format("YYYY-MM-DD");
       console.log("startLocalDate", startLocalDate, "endLocalDate", endLocalDate);
       return adaptivecard.chatExportCard(startLocalDate, endLocalDate);
     }
@@ -237,13 +237,16 @@ class TeamsChatExportBot extends TeamsActivityHandler {
                 value: ticket.ID,
               });
             });
-
-            return adaptivecard.showMessegeSelectionCard(
-              messagesExtracted.reverse(),
-              filter,
-              ticketChoices,
-              status
-            );
+            if (messagesExtracted && messagesExtracted.length > 0) {
+              return adaptivecard.showMessegeSelectionCard(
+                messagesExtracted.reverse(),
+                filter,
+                ticketChoices,
+                status
+              );
+            } else {
+              return adaptivecard.showErrorCard("No message to export.");
+            }
           }
         } else if (data.key === "Selective.Export") {
           // Export selected messages

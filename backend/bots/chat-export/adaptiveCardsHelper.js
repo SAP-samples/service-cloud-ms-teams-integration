@@ -347,7 +347,7 @@ class AdaptiveCardsHelper {
   }
 
   showSelectiveExportErrorCard(start, end, status) {
-    const placeholderEnd = moment(end).subtract(1, "days").format("YYYY-MM-D");
+    const placeholderEnd = moment(end).subtract(1, "days").format("YYYY-MM-DD");
     const selectiveExportErrorCard = CardFactory.adaptiveCard({
       $schema: "http://adaptivecards.io/schemas/adaptive-card.json",
       type: "AdaptiveCard",
@@ -451,7 +451,7 @@ class AdaptiveCardsHelper {
         value: {
           card: card,
           heigth: 600,
-          width: 800,
+          width: 600,
           title: "Error",
         },
       },
